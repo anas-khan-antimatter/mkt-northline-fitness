@@ -47,62 +47,64 @@
   --radius-2xl: calc(var(--radius) * 1.8);
 }
 
-/* Dark-first: Northline Fitness palette — athletic black, burnt orange, steel */
+/* ── BRUTALIST ATHLETIC PALETTE ──────────────────────────────
+     Near-black base · volt-green primary · safety-yellow accent
+     No soft SaaS pastels. Aggressive, industrial, raw.
+*/
 :root {
-  --background: oklch(0.11 0.008 260);       /* near-black */
-  --foreground: oklch(0.95 0.01 260);
-  --card: oklch(0.16 0.01 260);
-  --card-foreground: oklch(0.95 0.01 260);
-  --popover: oklch(0.16 0.01 260);
-  --popover-foreground: oklch(0.95 0.01 260);
-  --primary: oklch(0.68 0.18 35);            /* burnt orange / fire */
-  --primary-foreground: oklch(0.11 0.008 260);
-  --secondary: oklch(0.22 0.01 260);
-  --secondary-foreground: oklch(0.95 0.01 260);
-  --muted: oklch(0.18 0.01 260);
-  --muted-foreground: oklch(0.6 0.02 260);
-  --accent: oklch(0.68 0.18 35);
-  --accent-foreground: oklch(0.11 0.008 260);
-  --destructive: oklch(0.7 0.19 22);
+  --background: oklch(0.08 0.004 120);       /* near-black w/ green undertone */
+  --foreground: oklch(0.96 0.008 120);
+  --card: oklch(0.13 0.008 120);
+  --card-foreground: oklch(0.96 0.008 120);
+  --popover: oklch(0.13 0.008 120);
+  --popover-foreground: oklch(0.96 0.008 120);
+  --primary: oklch(0.64 0.22 140);           /* volt-green — aggressive, electric */
+  --primary-foreground: oklch(0.08 0.004 120);
+  --secondary: oklch(0.18 0.01 120);
+  --secondary-foreground: oklch(0.96 0.008 120);
+  --muted: oklch(0.15 0.008 120);
+  --muted-foreground: oklch(0.55 0.03 120);
+  --accent: oklch(0.78 0.18 95);            /* safety-yellow — hazard stripe energy */
+  --accent-foreground: oklch(0.08 0.004 120);
+  --destructive: oklch(0.6 0.22 30);
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 12%);
-  --ring: oklch(0.68 0.18 35 / 0.4);
+  --ring: oklch(0.64 0.22 140 / 0.4);
   --radius: 0.5rem;
-  --chart-1: oklch(0.68 0.18 35);
-  --chart-2: oklch(0.58 0.14 260);
-  --chart-3: oklch(0.48 0.12 260);
-  --chart-4: oklch(0.38 0.1 260);
-  --chart-5: oklch(0.28 0.08 260);
-  --sidebar: oklch(0.16 0.01 260);
-  --sidebar-foreground: oklch(0.95 0.01 260);
-  --sidebar-primary: oklch(0.68 0.18 35);
-  --sidebar-primary-foreground: oklch(0.11 0.008 260);
-  --sidebar-accent: oklch(0.22 0.01 260);
-  --sidebar-accent-foreground: oklch(0.95 0.01 260);
+  --chart-1: oklch(0.64 0.22 140);
+  --chart-2: oklch(0.78 0.18 95);
+  --chart-3: oklch(0.55 0.15 30);
+  --chart-4: oklch(0.45 0.12 120);
+  --chart-5: oklch(0.35 0.1 120);
+  --sidebar: oklch(0.13 0.008 120);
+  --sidebar-foreground: oklch(0.96 0.008 120);
+  --sidebar-primary: oklch(0.64 0.22 140);
+  --sidebar-primary-foreground: oklch(0.08 0.004 120);
+  --sidebar-accent: oklch(0.18 0.01 120);
+  --sidebar-accent-foreground: oklch(0.96 0.008 120);
   --sidebar-border: oklch(1 0 0 / 8%);
-  --sidebar-ring: oklch(0.68 0.18 35 / 0.4);
+  --sidebar-ring: oklch(0.64 0.22 140 / 0.4);
 }
 
 .dark {
-  /* same — always dark mode, no light theme switch needed */
-  --background: oklch(0.11 0.008 260);
-  --foreground: oklch(0.95 0.01 260);
-  --card: oklch(0.16 0.01 260);
-  --card-foreground: oklch(0.95 0.01 260);
-  --popover: oklch(0.16 0.01 260);
-  --popover-foreground: oklch(0.95 0.01 260);
-  --primary: oklch(0.68 0.18 35);
-  --primary-foreground: oklch(0.11 0.008 260);
-  --secondary: oklch(0.22 0.01 260);
-  --secondary-foreground: oklch(0.95 0.01 260);
-  --muted: oklch(0.18 0.01 260);
-  --muted-foreground: oklch(0.6 0.02 260);
-  --accent: oklch(0.68 0.18 35);
-  --accent-foreground: oklch(0.11 0.008 260);
-  --destructive: oklch(0.7 0.19 22);
+  --background: oklch(0.08 0.004 120);
+  --foreground: oklch(0.96 0.008 120);
+  --card: oklch(0.13 0.008 120);
+  --card-foreground: oklch(0.96 0.008 120);
+  --popover: oklch(0.13 0.008 120);
+  --popover-foreground: oklch(0.96 0.008 120);
+  --primary: oklch(0.64 0.22 140);
+  --primary-foreground: oklch(0.08 0.004 120);
+  --secondary: oklch(0.18 0.01 120);
+  --secondary-foreground: oklch(0.96 0.008 120);
+  --muted: oklch(0.15 0.008 120);
+  --muted-foreground: oklch(0.55 0.03 120);
+  --accent: oklch(0.78 0.18 95);
+  --accent-foreground: oklch(0.08 0.004 120);
+  --destructive: oklch(0.6 0.22 30);
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 12%);
-  --ring: oklch(0.68 0.18 35 / 0.4);
+  --ring: oklch(0.64 0.22 140 / 0.4);
 }
 
 @layer base {
@@ -117,10 +119,52 @@
   }
 }
 
-/* Custom utility for the gradient text hero */
-@utility text-fire {
-  background: linear-gradient(135deg, oklch(0.68 0.18 35), oklch(0.85 0.12 55));
+/* utility: volt-green gradient text */
+@utility text-volt {
+  background: linear-gradient(135deg, oklch(0.64 0.22 140), oklch(0.75 0.18 120));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+}
+
+/* utility: safety-yellow glow */
+@utility glow-yellow {
+  box-shadow: 0 0 30px oklch(0.78 0.18 95 / 0.3), 0 0 60px oklch(0.78 0.18 95 / 0.1);
+}
+
+/* utility: diagonal cut corner */
+@utility diagonal-cut {
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%, 0 0);
+}
+
+/* utility: hazard stripe bottom border */
+@utility hazard-stripe {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    oklch(0.78 0.18 95),
+    oklch(0.78 0.18 95) 8px,
+    oklch(0.08 0.004 120) 8px,
+    oklch(0.08 0.004 120) 16px
+  );
+  background-size: 22px 22px;
+}
+
+/* condensed headline — aggressive letter-spacing for huge type */
+@utility headline-condensed {
+  font-stretch: condensed;
+  letter-spacing: -0.02em;
+  line-height: 0.85;
+  font-weight: 800;
+}
+
+/* Custom scrollbar for the brutalist look */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: oklch(0.08 0.004 120);
+}
+::-webkit-scrollbar-thumb {
+  background: oklch(0.64 0.22 140);
+  border-radius: 0;
 }
