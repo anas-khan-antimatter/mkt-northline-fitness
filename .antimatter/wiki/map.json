@@ -1,15 +1,20 @@
 {
   "root": "/tmp/am-ws/c-1790732951274-8t1ke",
   "name": "c-1790732951274-8t1ke",
-  "generatedAt": "2026-09-30T14:12:05.417Z",
-  "fileCount": 7,
-  "dirCount": 2,
+  "generatedAt": "2026-09-30T17:40:01.954Z",
+  "fileCount": 43,
+  "dirCount": 7,
   "languages": {
-    "Markdown": 6,
-    "JSON": 1
+    "Markdown": 8,
+    "JSON": 5,
+    "JavaScript": 2,
+    "TypeScript": 20,
+    "CSS": 1
   },
   "keyFiles": [
-    "README.md"
+    "package.json",
+    "README.md",
+    "tsconfig.json"
   ],
   "directories": [
     {
@@ -27,9 +32,110 @@
     },
     {
       "dir": "(root)",
+      "fileCount": 11,
+      "files": [
+        ".gitignore",
+        "AGENTS.md",
+        "CLAUDE.md",
+        "components.json",
+        "eslint.config.mjs",
+        "next.config.ts",
+        "package-lock.json",
+        "package.json",
+        "postcss.config.mjs",
+        "README.md",
+        "tsconfig.json"
+      ],
+      "symbols": []
+    },
+    {
+      "dir": "public",
+      "fileCount": 5,
+      "files": [
+        "file.svg",
+        "globe.svg",
+        "next.svg",
+        "vercel.svg",
+        "window.svg"
+      ],
+      "symbols": []
+    },
+    {
+      "dir": "src/app",
+      "fileCount": 4,
+      "files": [
+        "favicon.ico",
+        "globals.css",
+        "layout.tsx",
+        "page.tsx"
+      ],
+      "symbols": [
+        {
+          "name": "metadata",
+          "kind": "const"
+        }
+      ]
+    },
+    {
+      "dir": "src/components",
+      "fileCount": 6,
+      "files": [
+        "classes-section.tsx",
+        "hero-section.tsx",
+        "nav-header.tsx",
+        "pricing-section.tsx",
+        "results-section.tsx",
+        "trainers-section.tsx"
+      ],
+      "symbols": [
+        {
+          "name": "ClassesSection",
+          "kind": "fn"
+        },
+        {
+          "name": "HeroSection",
+          "kind": "fn"
+        },
+        {
+          "name": "NavHeader",
+          "kind": "fn"
+        },
+        {
+          "name": "PricingSection",
+          "kind": "fn"
+        },
+        {
+          "name": "ResultsSection",
+          "kind": "fn"
+        },
+        {
+          "name": "TrainersSection",
+          "kind": "fn"
+        }
+      ]
+    },
+    {
+      "dir": "src/components/ui",
+      "fileCount": 10,
+      "files": [
+        "accordion.tsx",
+        "alert.tsx",
+        "badge.tsx",
+        "button.tsx",
+        "card.tsx",
+        "dialog.tsx",
+        "input.tsx",
+        "separator.tsx",
+        "sheet.tsx",
+        "textarea.tsx"
+      ],
+      "symbols": []
+    },
+    {
+      "dir": "src/lib",
       "fileCount": 1,
       "files": [
-        "README.md"
+        "utils.ts"
       ],
       "symbols": []
     }
