@@ -1,0 +1,23 @@
+{
+  "root": "/tmp/am-ws/c-1790732951274-8t1ke",
+  "name": "c-1790732951274-8t1ke",
+  "generatedAt": "2026-09-30T01:50:41.892Z",
+  "fileCount": 1,
+  "dirCount": 1,
+  "languages": {
+    "Markdown": 1
+  },
+  "keyFiles": [
+    "README.md"
+  ],
+  "directories": [
+    {
+      "dir": "(root)",
+      "fileCount": 1,
+      "files": [
+        "README.md"
+      ],
+      "symbols": []
+    }
+  ]
+}
