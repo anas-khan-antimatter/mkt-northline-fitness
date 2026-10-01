@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "runsOn": "ubuntu-latest",
+  "setup": [
+    "npm ci"
+  ],
+  "build": [
+    "npm run build"
+  ],
+  "probes": [
+    {
+      "kind": "browser",
+      "url": "/programs"
+    },
+    {
+      "kind": "browser",
+      "url": "/week"
+    },
+    {
+      "kind": "browser",
+      "url": "/wod"
+    },
+    {
+      "kind": "http",
+      "url": "/api/checkin"
+    },
+    {
+      "kind": "http",
+      "url": "/api/wod"
+    }
+  ]
+}
