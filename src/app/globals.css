@@ -40,69 +40,71 @@
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
-  --radius-sm: calc(var(--radius) * 0.6);
-  --radius-md: calc(var(--radius) * 0.8);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) * 1.4);
-  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-sm: 0;
+  --radius-md: 0;
+  --radius-lg: 0;
+  --radius-xl: 0;
+  --radius-2xl: 0;
 }
 
-/* Dark-first: Northline Fitness palette — athletic black, burnt orange, steel */
+/* ─── BRUTALIST ATHLETIC ─────────────────────────────
+ *   Near-black · Safety-yellow · Condensed headlines
+ *   Hard diagonal cuts · No soft SaaS pastels
+ * ──────────────────────────────────────────────────── */
 :root {
-  --background: oklch(0.11 0.008 260);       /* near-black */
-  --foreground: oklch(0.95 0.01 260);
-  --card: oklch(0.16 0.01 260);
-  --card-foreground: oklch(0.95 0.01 260);
-  --popover: oklch(0.16 0.01 260);
-  --popover-foreground: oklch(0.95 0.01 260);
-  --primary: oklch(0.68 0.18 35);            /* burnt orange / fire */
-  --primary-foreground: oklch(0.11 0.008 260);
-  --secondary: oklch(0.22 0.01 260);
-  --secondary-foreground: oklch(0.95 0.01 260);
-  --muted: oklch(0.18 0.01 260);
-  --muted-foreground: oklch(0.6 0.02 260);
-  --accent: oklch(0.68 0.18 35);
-  --accent-foreground: oklch(0.11 0.008 260);
-  --destructive: oklch(0.7 0.19 22);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 12%);
-  --ring: oklch(0.68 0.18 35 / 0.4);
-  --radius: 0.5rem;
-  --chart-1: oklch(0.68 0.18 35);
-  --chart-2: oklch(0.58 0.14 260);
-  --chart-3: oklch(0.48 0.12 260);
-  --chart-4: oklch(0.38 0.1 260);
-  --chart-5: oklch(0.28 0.08 260);
-  --sidebar: oklch(0.16 0.01 260);
-  --sidebar-foreground: oklch(0.95 0.01 260);
-  --sidebar-primary: oklch(0.68 0.18 35);
-  --sidebar-primary-foreground: oklch(0.11 0.008 260);
-  --sidebar-accent: oklch(0.22 0.01 260);
-  --sidebar-accent-foreground: oklch(0.95 0.01 260);
+  --background: oklch(0.035 0.002 80);        /* near-black */
+  --foreground: oklch(0.92 0.01 80);
+  --card: oklch(0.055 0.003 80);
+  --card-foreground: oklch(0.92 0.01 80);
+  --popover: oklch(0.055 0.003 80);
+  --popover-foreground: oklch(0.92 0.01 80);
+  --primary: oklch(0.88 0.22 105);            /* safety-yellow #E8FF00 */
+  --primary-foreground: oklch(0.035 0.002 80);
+  --secondary: oklch(0.15 0.005 80);
+  --secondary-foreground: oklch(0.92 0.01 80);
+  --muted: oklch(0.1 0.005 80);
+  --muted-foreground: oklch(0.55 0.02 80);
+  --accent: oklch(0.88 0.22 105);
+  --accent-foreground: oklch(0.035 0.002 80);
+  --destructive: oklch(0.65 0.22 25);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 14%);
+  --ring: oklch(0.88 0.22 105 / 0.35);
+  --radius: 0rem;
+  --chart-1: oklch(0.88 0.22 105);
+  --chart-2: oklch(0.75 0.18 40);
+  --chart-3: oklch(0.5 0.15 260);
+  --chart-4: oklch(0.35 0.1 260);
+  --chart-5: oklch(0.25 0.08 260);
+  --sidebar: oklch(0.055 0.003 80);
+  --sidebar-foreground: oklch(0.92 0.01 80);
+  --sidebar-primary: oklch(0.88 0.22 105);
+  --sidebar-primary-foreground: oklch(0.035 0.002 80);
+  --sidebar-accent: oklch(0.15 0.005 80);
+  --sidebar-accent-foreground: oklch(0.92 0.01 80);
   --sidebar-border: oklch(1 0 0 / 8%);
-  --sidebar-ring: oklch(0.68 0.18 35 / 0.4);
+  --sidebar-ring: oklch(0.88 0.22 105 / 0.35);
 }
 
 .dark {
-  /* same — always dark mode, no light theme switch needed */
-  --background: oklch(0.11 0.008 260);
-  --foreground: oklch(0.95 0.01 260);
-  --card: oklch(0.16 0.01 260);
-  --card-foreground: oklch(0.95 0.01 260);
-  --popover: oklch(0.16 0.01 260);
-  --popover-foreground: oklch(0.95 0.01 260);
-  --primary: oklch(0.68 0.18 35);
-  --primary-foreground: oklch(0.11 0.008 260);
-  --secondary: oklch(0.22 0.01 260);
-  --secondary-foreground: oklch(0.95 0.01 260);
-  --muted: oklch(0.18 0.01 260);
-  --muted-foreground: oklch(0.6 0.02 260);
-  --accent: oklch(0.68 0.18 35);
-  --accent-foreground: oklch(0.11 0.008 260);
-  --destructive: oklch(0.7 0.19 22);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 12%);
-  --ring: oklch(0.68 0.18 35 / 0.4);
+  --background: oklch(0.035 0.002 80);
+  --foreground: oklch(0.92 0.01 80);
+  --card: oklch(0.055 0.003 80);
+  --card-foreground: oklch(0.92 0.01 80);
+  --popover: oklch(0.055 0.003 80);
+  --popover-foreground: oklch(0.92 0.01 80);
+  --primary: oklch(0.88 0.22 105);
+  --primary-foreground: oklch(0.035 0.002 80);
+  --secondary: oklch(0.15 0.005 80);
+  --secondary-foreground: oklch(0.92 0.01 80);
+  --muted: oklch(0.1 0.005 80);
+  --muted-foreground: oklch(0.55 0.02 80);
+  --accent: oklch(0.88 0.22 105);
+  --accent-foreground: oklch(0.035 0.002 80);
+  --destructive: oklch(0.65 0.22 25);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 14%);
+  --ring: oklch(0.88 0.22 105 / 0.35);
 }
 
 @layer base {
@@ -115,12 +117,42 @@
   body {
     @apply bg-background text-foreground font-body;
   }
+  ::selection {
+    background: oklch(0.88 0.22 105 / 0.35);
+    color: oklch(0.035 0.002 80);
+  }
 }
 
-/* Custom utility for the gradient text hero */
-@utility text-fire {
-  background: linear-gradient(135deg, oklch(0.68 0.18 35), oklch(0.85 0.12 55));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+/* ─── Diagonal cut utility ──────────────────────────── */
+@utility diagonal-cut {
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 24px), calc(100% - 24px) 100%, 0 100%);
+}
+
+@utility diagonal-cut-lg {
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 48px), calc(100% - 48px) 100%, 0 100%);
+}
+
+@utility diagonal-cut-hero {
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 64px), 0 100%);
+}
+
+/* ─── Heavy underline accent ────────────────────────── */
+@utility heavy-underline {
+  background-image: linear-gradient(to top, oklch(0.88 0.22 105 / 0.5) 0%, oklch(0.88 0.22 105 / 0.5) 30%, transparent 30%);
+  display: inline;
+}
+
+/* ─── Yellow glow ───────────────────────────────────── */
+@utility glow-yellow {
+  box-shadow: 0 0 60px oklch(0.88 0.22 105 / 0.15), 0 0 120px oklch(0.88 0.22 105 / 0.08);
+}
+
+/* ─── Brutalist border ──────────────────────────────── */
+@utility brutal-border {
+  border: 2px solid oklch(0.88 0.22 105 / 0.6);
+}
+
+/* ─── Yellow text ───────────────────────────────────── */
+@utility text-safety {
+  color: oklch(0.88 0.22 105);
 }
