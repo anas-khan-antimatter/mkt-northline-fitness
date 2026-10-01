@@ -1,14 +1,14 @@
 {
   "root": "/tmp/am-ws/c-1790732951274-8t1ke",
   "name": "c-1790732951274-8t1ke",
-  "generatedAt": "2026-10-01T14:44:56.093Z",
-  "fileCount": 43,
-  "dirCount": 7,
+  "generatedAt": "2026-10-01T14:52:44.711Z",
+  "fileCount": 45,
+  "dirCount": 9,
   "languages": {
     "Markdown": 8,
     "JSON": 5,
     "JavaScript": 2,
-    "TypeScript": 20,
+    "TypeScript": 22,
     "CSS": 1
   },
   "keyFiles": [
@@ -77,6 +77,32 @@
       ]
     },
     {
+      "dir": "src/app/api/checkin",
+      "fileCount": 1,
+      "files": [
+        "route.ts"
+      ],
+      "symbols": [
+        {
+          "name": "POST",
+          "kind": "fn"
+        }
+      ]
+    },
+    {
+      "dir": "src/app/api/wod",
+      "fileCount": 1,
+      "files": [
+        "route.ts"
+      ],
+      "symbols": [
+        {
+          "name": "GET",
+          "kind": "fn"
+        }
+      ]
+    },
+    {
       "dir": "src/components",
       "fileCount": 6,
       "files": [
@@ -94,10 +120,6 @@
         },
         {
           "name": "HeroSection",
-          "kind": "fn"
-        },
-        {
-          "name": "NavHeader",
           "kind": "fn"
         },
         {

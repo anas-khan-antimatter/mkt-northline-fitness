@@ -1,9 +1,9 @@
 # Workspace Map — c-1790732951274-8t1ke
-_Generated 2026-10-01 · 43 files · 7 directories_  
+_Generated 2026-10-01 · 45 files · 9 directories_  
 _Deterministic structural map. Regenerate with the `map` tool or "Antimatter: Map Workspace". Do not hand-edit._
 
 ## Languages
-- TypeScript: 20
+- TypeScript: 22
 - Markdown: 8
 - JSON: 5
 - JavaScript: 2
@@ -28,8 +28,16 @@ _Deterministic structural map. Regenerate with the `map` tool or "Antimatter: Ma
 - symbols: metadata (const)
 - files: favicon.ico, globals.css, layout.tsx, page.tsx
 
+### `src/app/api/checkin` — 1 file
+- symbols: POST (fn)
+- files: route.ts
+
+### `src/app/api/wod` — 1 file
+- symbols: GET (fn)
+- files: route.ts
+
 ### `src/components` — 6 files
-- symbols: ClassesSection (fn), HeroSection (fn), NavHeader (fn), PricingSection (fn), ResultsSection (fn), TrainersSection (fn)
+- symbols: ClassesSection (fn), HeroSection (fn), PricingSection (fn), ResultsSection (fn), TrainersSection (fn)
 - files: classes-section.tsx, hero-section.tsx, nav-header.tsx, pricing-section.tsx, results-section.tsx, trainers-section.tsx
 
 ### `src/components/ui` — 10 files
