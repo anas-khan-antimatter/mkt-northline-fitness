@@ -1,14 +1,15 @@
 {
-  "root": "/tmp/am-ws/c-1790732951274-8t1ke",
-  "name": "c-1790732951274-8t1ke",
-  "generatedAt": "2026-10-01T14:52:44.711Z",
-  "fileCount": 45,
-  "dirCount": 9,
+  "root": "/tmp/am-ws/c-1790870819079-4gg64",
+  "name": "c-1790870819079-4gg64",
+  "generatedAt": "2026-10-01T16:18:08.356Z",
+  "fileCount": 56,
+  "dirCount": 19,
   "languages": {
+    "JSON": 6,
     "Markdown": 8,
-    "JSON": 5,
-    "JavaScript": 2,
-    "TypeScript": 22,
+    "JavaScript": 4,
+    "YAML": 1,
+    "TypeScript": 29,
     "CSS": 1
   },
   "keyFiles": [
@@ -17,6 +18,14 @@
     "tsconfig.json"
   ],
   "directories": [
+    {
+      "dir": ".antimatter/lanes",
+      "fileCount": 1,
+      "files": [
+        "ship.json"
+      ],
+      "symbols": []
+    },
     {
       "dir": ".antimatter/wiki",
       "fileCount": 6,
@@ -27,6 +36,23 @@
         "map.md",
         "overview.md",
         "schema.md"
+      ],
+      "symbols": []
+    },
+    {
+      "dir": ".github/antimatter",
+      "fileCount": 2,
+      "files": [
+        "lane-runner.mjs",
+        "store-release.mjs"
+      ],
+      "symbols": []
+    },
+    {
+      "dir": ".github/workflows",
+      "fileCount": 1,
+      "files": [
+        "antimatter-lane.yml"
       ],
       "symbols": []
     },
@@ -101,6 +127,62 @@
           "kind": "fn"
         }
       ]
+    },
+    {
+      "dir": "src/app/checkin",
+      "fileCount": 1,
+      "files": [
+        "page.tsx"
+      ],
+      "symbols": []
+    },
+    {
+      "dir": "src/app/programs",
+      "fileCount": 1,
+      "files": [
+        "page.tsx"
+      ],
+      "symbols": []
+    },
+    {
+      "dir": "src/app/programs/hiit-conditioning",
+      "fileCount": 1,
+      "files": [
+        "page.tsx"
+      ],
+      "symbols": []
+    },
+    {
+      "dir": "src/app/programs/powerlifting",
+      "fileCount": 1,
+      "files": [
+        "page.tsx"
+      ],
+      "symbols": []
+    },
+    {
+      "dir": "src/app/programs/strength-foundations",
+      "fileCount": 1,
+      "files": [
+        "page.tsx"
+      ],
+      "symbols": []
+    },
+    {
+      "dir": "src/app/week",
+      "fileCount": 1,
+      "files": [
+        "page.tsx"
+      ],
+      "symbols": []
+    },
+    {
+      "dir": "src/app/wod",
+      "fileCount": 1,
+      "files": [
+        "page.tsx"
+      ],
+      "symbols": []
     },
     {
       "dir": "src/components",
