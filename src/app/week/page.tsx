@@ -162,7 +162,7 @@ export default function WeekPage() {
                     max={6}
                     value={daysPerWeek}
                     onChange={(e) => {
-                      setDaysPerWeek(parseInt(e.target.value));
+                      setDaysPerWeek(Number(e.target.value));
                       setShowResults(false);
                     }}
                     className="w-full h-2 appearance-none bg-primary/30 rounded-none accent-primary cursor-pointer"
