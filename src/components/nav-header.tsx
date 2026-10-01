@@ -10,6 +10,7 @@ const links = [
   { label: "Programs", href: "/programs" },
   { label: "WOD", href: "/wod" },
   { label: "Membership", href: "/week" },
+  { label: "Check-in", href: "/checkin" },
 ];
 
 export default function NavHeader() {
