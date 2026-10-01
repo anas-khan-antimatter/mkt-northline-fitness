@@ -1,115 +1,89 @@
 "use client";
 
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { Dumbbell, Menu, X } from "lucide-react";
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Dumbbell } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
-const navLinks = [
-  { label: "Classes", href: "#classes" },
-  { label: "Membership", href: "#pricing" },
-  { label: "Trainers", href: "#trainers" },
-  { label: "Results", href: "#results" },
-  { label: "FAQ", href: "#faq" },
+const links = [
+  { label: "Home", href: "/" },
+  { label: "Programs", href: "/programs" },
+  { label: "WOD", href: "/wod" },
+  { label: "Membership", href: "/week" },
 ];
 
-export function NavHeader() {
-  const [mobileOpen, setMobileOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+export default function NavHeader() {
+  const [open, setOpen] = useState(false);
+  const path = usePathname();
 
-  if (typeof window !== "undefined") {
-    window.addEventListener("scroll", () => {
-      setScrolled(window.scrollY > 40);
-    }, { passive: true });
-  }
+  const isActive = (href: string) => {
+    if (href === "/") return path === "/";
+    return path.startsWith(href);
+  };
 
   return (
-    <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
-        scrolled
-          ? "bg-background/85 backdrop-blur-xl border-b border-white/5 shadow-2xl shadow-black/20"
-          : "bg-transparent"
-      }`}
-    >
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-10">
-        {/* Logo */}
-        <a href="#" className="flex items-center gap-2.5 group">
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary shadow-lg shadow-primary/25">
-            <Dumbbell className="h-5 w-5 text-primary-foreground" />
-          </div>
-          <span className="font-anton text-xl tracking-[0.15em] text-foreground uppercase">
-            Northline
-          </span>
-        </a>
+    <header className="fixed top-0 z-50 w-full bg-background/95 backdrop-blur-md border-b-2 border-primary/30">
+      {/* Yellow hard-cut stripe */}
+      <div className="absolute top-0 left-0 right-0 h-1 bg-primary" />
 
-        {/* Desktop Nav */}
-        <nav className="hidden items-center gap-8 md:flex">
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="relative text-sm font-medium tracking-wide text-muted-foreground transition-colors hover:text-foreground after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
+        <Link href="/" className="flex items-center gap-2.5 group">
+          <div className="flex h-9 w-9 items-center justify-center bg-primary text-primary-foreground">
+            <Dumbbell className="h-5 w-5" />
+          </div>
+          <span className="font-heading text-2xl font-bold tracking-[0.06em] text-foreground">
+            NORTHLINE
+          </span>
+          <span className="font-heading text-[10px] font-bold tracking-[0.2em] text-primary uppercase leading-none mt-1.5">
+            Fitness
+          </span>
+        </Link>
+
+        <nav className="hidden md:flex items-center gap-1">
+          {links.map((l) => (
+            <Link
+              key={l.href}
+              href={l.href}
+              className={`px-4 py-2 text-sm font-semibold uppercase tracking-[0.08em] transition-colors ${
+                isActive(l.href)
+                  ? "bg-primary text-primary-foreground"
+                  : "text-muted-foreground hover:text-foreground hover:bg-white/[4%]"
+              }`}
             >
-              {link.label}
-            </a>
+              {l.label}
+            </Link>
           ))}
-          <Button
-            size="lg"
-            className="ml-4 rounded-full bg-primary px-6 font-heading text-sm tracking-widest uppercase shadow-lg shadow-primary/20 hover:bg-primary/90 hover:shadow-primary/30"
-            asChild
-          >
-            <a href="#waitlist">Join Waitlist</a>
-          </Button>
         </nav>
 
-        {/* Mobile toggle */}
         <button
-          onClick={() => setMobileOpen(!mobileOpen)}
-          className="flex items-center justify-center md:hidden"
+          onClick={() => setOpen(!open)}
+          className="text-foreground md:hidden"
           aria-label="Toggle menu"
         >
-          {mobileOpen ? (
-            <X className="h-6 w-6 text-foreground" />
-          ) : (
-            <Menu className="h-6 w-6 text-foreground" />
-          )}
+          {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
       </div>
 
-      {/* Mobile Nav */}
-      <AnimatePresence>
-        {mobileOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            className="overflow-hidden border-t border-white/5 bg-background/95 backdrop-blur-xl md:hidden"
-          >
-            <nav className="flex flex-col gap-2 px-6 py-6">
-              {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setMobileOpen(false)}
-                  className="rounded-lg px-4 py-3 text-sm font-medium tracking-wide text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
-                >
-                  {link.label}
-                </a>
-              ))}
-              <Button
-                size="lg"
-                className="mt-4 w-full rounded-full bg-primary font-heading text-sm tracking-widest uppercase"
-                asChild
+      {open && (
+        <div className="border-t-2 border-primary/30 bg-background px-6 pb-6 pt-4 md:hidden">
+          <nav className="flex flex-col gap-2">
+            {links.map((l) => (
+              <Link
+                key={l.href}
+                href={l.href}
+                onClick={() => setOpen(false)}
+                className={`block px-4 py-3 text-sm font-semibold uppercase tracking-[0.08em] ${
+                  isActive(l.href)
+                    ? "bg-primary text-primary-foreground"
+                    : "text-muted-foreground hover:text-foreground hover:bg-white/[4%]"
+                }`}
               >
-                <a href="#waitlist" onClick={() => setMobileOpen(false)}>
-                  Join Waitlist
-                </a>
-              </Button>
-            </nav>
-          </motion.div>
-        )}
-      </AnimatePresence>
+                {l.label}
+              </Link>
+            ))}
+          </nav>
+        </div>
+      )}
     </header>
   );
 }
