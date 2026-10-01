@@ -1,5 +1,5 @@
 # Workspace Map — c-1790732951274-8t1ke
-_Generated 2026-09-30 · 43 files · 7 directories_  
+_Generated 2026-10-01 · 43 files · 7 directories_  
 _Deterministic structural map. Regenerate with the `map` tool or "Antimatter: Map Workspace". Do not hand-edit._
 
 ## Languages
