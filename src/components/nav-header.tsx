@@ -2,114 +2,91 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Dumbbell } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Menu, X, Dumbbell, ChevronRight } from "lucide-react";
 
-const navLinks = [
-  { label: "Classes", href: "#classes" },
-  { label: "Membership", href: "#pricing" },
-  { label: "Trainers", href: "#trainers" },
-  { label: "Results", href: "#results" },
-  { label: "FAQ", href: "#faq" },
+const APP_LINKS = [
+  { label: "Programs", href: "/programs" },
+  { label: "Coaches", href: "/coaches" },
+  { label: "Membership", href: "/membership" },
+  { label: "WOD", href: "/wod" },
+  { label: "PR Tracker", href: "/pr-tracker" },
+  { label: "Check-In", href: "/checkin" },
 ];
 
-export function NavHeader() {
-  const [mobileOpen, setMobileOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  if (typeof window !== "undefined") {
-    window.addEventListener("scroll", () => {
-      setScrolled(window.scrollY > 40);
-    }, { passive: true });
-  }
+export function Nav() {
+  const [open, setOpen] = useState(false);
 
   return (
-    <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
-        scrolled
-          ? "bg-background/85 backdrop-blur-xl border-b border-white/5 shadow-2xl shadow-black/20"
-          : "bg-transparent"
-      }`}
-    >
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-10">
-        {/* Logo */}
-        <a href="#" className="flex items-center gap-2.5 group">
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary shadow-lg shadow-primary/25">
+    <nav className="fixed top-0 z-50 w-full border-b border-white/[6%] bg-background/95 backdrop-blur-xl">
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
+        <a href="/" className="flex items-center gap-2.5 group">
+          <div className="flex h-9 w-9 items-center justify-center bg-primary group-hover:bg-primary/80 transition-colors">
             <Dumbbell className="h-5 w-5 text-primary-foreground" />
           </div>
-          <span className="font-anton text-xl tracking-[0.15em] text-foreground uppercase">
-            Northline
+          <span className="font-heading text-xl font-bold tracking-[0.15em] text-foreground">
+            NORTHLINE
           </span>
         </a>
 
-        {/* Desktop Nav */}
-        <nav className="hidden items-center gap-8 md:flex">
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="relative text-sm font-medium tracking-wide text-muted-foreground transition-colors hover:text-foreground after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
-            >
-              {link.label}
-            </a>
+        <ul className="hidden items-center gap-6 md:flex">
+          {APP_LINKS.map((l) => (
+            <li key={l.href}>
+              <a
+                href={l.href}
+                className="font-body text-sm font-medium uppercase tracking-[0.1em] text-muted-foreground transition-colors hover:text-primary"
+              >
+                {l.label}
+              </a>
+            </li>
           ))}
-          <Button
-            size="lg"
-            className="ml-4 rounded-full bg-primary px-6 font-heading text-sm tracking-widest uppercase shadow-lg shadow-primary/20 hover:bg-primary/90 hover:shadow-primary/30"
-            asChild
-          >
-            <a href="#waitlist">Join Waitlist</a>
-          </Button>
-        </nav>
+        </ul>
 
-        {/* Mobile toggle */}
+        <a
+          href="/membership"
+          className="hidden items-center gap-1.5 bg-primary px-5 py-2.5 text-sm font-bold uppercase tracking-[0.1em] text-primary-foreground transition-all hover:bg-primary/90 md:inline-flex"
+        >
+          Join Now <ChevronRight className="h-4 w-4" />
+        </a>
+
         <button
-          onClick={() => setMobileOpen(!mobileOpen)}
-          className="flex items-center justify-center md:hidden"
+          onClick={() => setOpen(!open)}
+          className="text-foreground md:hidden"
           aria-label="Toggle menu"
         >
-          {mobileOpen ? (
-            <X className="h-6 w-6 text-foreground" />
-          ) : (
-            <Menu className="h-6 w-6 text-foreground" />
-          )}
+          {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
       </div>
 
-      {/* Mobile Nav */}
-      <AnimatePresence>
-        {mobileOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            className="overflow-hidden border-t border-white/5 bg-background/95 backdrop-blur-xl md:hidden"
-          >
-            <nav className="flex flex-col gap-2 px-6 py-6">
-              {navLinks.map((link) => (
+      {open && (
+        <motion.div
+          initial={{ opacity: 0, y: -8 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="border-t border-white/[6%] bg-background px-6 pb-6 pt-4 md:hidden"
+        >
+          <ul className="flex flex-col gap-3">
+            {APP_LINKS.map((l) => (
+              <li key={l.href}>
                 <a
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setMobileOpen(false)}
-                  className="rounded-lg px-4 py-3 text-sm font-medium tracking-wide text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+                  href={l.href}
+                  onClick={() => setOpen(false)}
+                  className="block font-body text-base font-medium uppercase tracking-[0.08em] text-muted-foreground hover:text-primary"
                 >
-                  {link.label}
+                  {l.label}
                 </a>
-              ))}
-              <Button
-                size="lg"
-                className="mt-4 w-full rounded-full bg-primary font-heading text-sm tracking-widest uppercase"
-                asChild
+              </li>
+            ))}
+            <li>
+              <a
+                href="/membership"
+                onClick={() => setOpen(false)}
+                className="inline-flex items-center gap-1.5 bg-primary px-5 py-2.5 text-sm font-bold uppercase tracking-[0.1em] text-primary-foreground"
               >
-                <a href="#waitlist" onClick={() => setMobileOpen(false)}>
-                  Join Waitlist
-                </a>
-              </Button>
-            </nav>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </header>
+                Join Now <ChevronRight className="h-4 w-4" />
+              </a>
+            </li>
+          </ul>
+        </motion.div>
+      )}
+    </nav>
   );
 }
